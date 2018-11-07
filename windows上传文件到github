@@ -1,0 +1,21 @@
+注意：如果你之前配置好本电脑和github的关联就直接跳过1，3，4，5这3个步骤
+1.本地安装好git工具
+2.在桌面右键选Git bash here,会跳出一个shell窗口（s）下文用s表示
+
+（3.配置机器名字和email地址(2步)
+git config --global user.name "jackffjj"          (jackffjj是你github到名字)
+git config --global user.email "2596516643@qq.com" (换成你github设置的邮箱)
+以上两步是设置了你电脑所有git仓库都用这个配置，当然也可以对某个仓库指定不同的用户名，邮箱
+4.配置ssh
+ssh-keygen -t ras -C "2596516643@qq.com"
+然后生成一个.ssh目录，在在这个目录复制id_rsa.pub文件里面的内容
+5.新建一个ssh key:在github右上角图标点一下，出现选项选setting，然后点ssh and GPGkeys，点new ssh会出现两个框，title自己随便命名，把刚才id_rsa.pub文件里面的内容复制到第二个框）
+
+6.在本地创建一个文件夹，在s中进入这个文件夹
+7.在github创建一个仓库，把克隆路径复制下来
+8.在s中输入 git clone git@github.com:jackffjj/shenzhixin.git              （后面这个链接就是第7步复制的路径）
+9.然后你会发现多了一个shenzhixin这个文件夹，进去这个文件夹，把你想上传的项目复制到里面去
+10.输入git add -A
+11.输入git commit -m "shenzhixinsjl"
+12.git push
+13.去github看一下你的杰作吧
