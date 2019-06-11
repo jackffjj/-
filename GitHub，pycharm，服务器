@@ -1,0 +1,70 @@
+pycharm+git+服务器：
+思路：把pycharm的代码上传到Git，Git克隆到服务器
+1.把项目啦下来pycharm项目右键git -> add  把克隆地址放到弹出框，
+2.更新：git -> commit,把所有.idea的文件去掉,然后git->push
+
+
+
+a.
+1.命令行进去项目文件夹   （这里的邮箱是你登录GitHub的用户名，一般是邮箱）
+2.git init
+3.然后配置 ssh , 输入：ssh-keygen -t rsa -C “2596516643@qq.com" (邮箱替换成你登录github的邮箱)
+
+4、这个地方请注意，它会在你选择的路径下上生成 ssh key，如果你直接点击回车，会在默认路径下创建 ssh 。如果你有多个项目，那么请配置不同的路径，或者一个路径换个文件名输入路径之后点击回车。回车回车
+5.然后执行命令：pbcopy < ~/.ssh/id_rsa.pub   这个的作用是将你的 ssh 代码复制到剪贴板。
+6.在GitHub网页版的setting添加ssh key，把复制内容粘贴到key框
+7.验证一下是否添加ssh成功，输入命令： ssh -T git@github.com  如果报错，在（yes/no）？后面加ssh -T 2596516643@qq.com
+8.输入以下两个命令
+git config --global user.name "your name"   —your name是库名字
+
+git config --global user.email “2596516643@qqcom”  ——邮箱
+9.  git status    获取状态
+10.  git add .     (这个点表示更改所有的改动)
+11.  然后执行命令 git commit -m “备注”
+12.   git remote add origin git@github.com:用户名/项目名.git  （用户名是登GitHub进去之后你自己取的用户名，不是登录用户名，加库名 （git@github.com:用户名/项目名.git  是你库路径）
+13.  git push -f origin master
+14.ok,刷新网页版
+
+b.
+touch README.md //新建一个记录提交操作的文档
+git init //初始化本地仓库
+git add README.md //添加
+git add -A  //加入所有项目
+git status //检查状态 如果都是绿的 证明成功
+git commit -m "first commit"//提交到要地仓库，并写一些注释
+git pull origin master(下一步）
+git remote add origin git@github.com:youname/Test.git //连接远程仓库并建了一个名叫：origin的别名
+git push -u origin master //将本地仓库的东西提交到地址是origin的地址，master分支下
+
+
+
+
+
+
+
+
+创建添加分支
+1.创建+切换分支
+git checkout -b [branch name]
+2.推送到GitHub
+git push origin [branch name]
+3.删除分支
+git branch -d [branch name]   —本地
+git push origin :gh-dev       远程
+
+
+
+
+1.先在本地克隆一份远程仓库 git clone git@github.com:jackffjj/myblog.git
+2.把项目拉到远程库所在本地文件夹，然后 git add -A
+3.git commit -m “备注”
+4.然后git push
+提示如下就成功了
+Counting objects: 324, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (171/171), done.
+Writing objects: 100% (324/324), 561.81 KiB | 0 bytes/s, done.
+Total 324 (delta 88), reused 0 (delta 0)
+remote: Resolving deltas: 100% (88/88), done.
+To github.com:jackffjj/myblog.git
+   6714f9b..fa81cfc  master -> master
