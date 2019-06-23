@@ -8,7 +8,7 @@ pycharm+git+服务器：
 a.
 1.命令行进去项目文件夹   （这里的邮箱是你登录GitHub的用户名，一般是邮箱）
 2.git init
-3.然后配置 ssh , 输入：ssh-keygen -t rsa -C “2596516643@qq.com" (邮箱替换成你登录github的邮箱)
+3.然后配置 ssh , 输入：ssh-keygen -t rsa -C "2596516643@qq.com" (邮箱替换成你登录github的邮箱)
 
 4、这个地方请注意，它会在你选择的路径下上生成 ssh key，如果你直接点击回车，会在默认路径下创建 ssh 。如果你有多个项目，那么请配置不同的路径，或者一个路径换个文件名输入路径之后点击回车。回车回车
 5.然后执行命令：pbcopy < ~/.ssh/id_rsa.pub   这个的作用是将你的 ssh 代码复制到剪贴板。
@@ -17,13 +17,19 @@ a.
 8.输入以下两个命令
 git config --global user.name "your name"   —your name是库名字
 
-git config --global user.email “2596516643@qqcom”  ——邮箱
+git config --global user.email "2596516643@qqcom"  ——邮箱
 9.  git status    获取状态
 10.  git add .     (这个点表示更改所有的改动)
 11.  然后执行命令 git commit -m “备注”
 12.   git remote add origin git@github.com:用户名/项目名.git  （用户名是登GitHub进去之后你自己取的用户名，不是登录用户名，加库名 （git@github.com:用户名/项目名.git  是你库路径）
 13.  git push -f origin master
 14.ok,刷新网页版
+
+（注： 12 提示
+@github.com:jackffjj/delivery_expense.git
+fatal: 远程 origin 已经存在。时输入
+git remote rm origin
+
 
 b.
 touch README.md //新建一个记录提交操作的文档
