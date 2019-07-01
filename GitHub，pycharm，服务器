@@ -44,7 +44,22 @@ git push -u origin master //将本地仓库的东西提交到地址是origin的�
 
 
 
+ubuntu
+1.在想上传的文件夹输入：git init
+2.输入以下两个命令
+git config --global user.name "jackffjj"   —jackffjj是库名字
+git config --global user.email "2596516643@qqcom"  ——邮箱
+3.  git status    获取状态
+4.  git add -A     (这个点表示更改所有的改动)
+5.  然后执行命令 git commit -m “备注”
+6.   git remote add origin git@github.com:用户名/项目名.git  （用户名是登GitHub进去之后你自己取的用户名，不是登录用户名，加库名 （git@github.com:用户名/项目名.git  是你库路径）
+7.  git push -f origin master
+8.ok,刷新网页版
 
+（注： 12 提示
+@github.com:jackffjj/delivery_expense.git
+fatal: 远程 origin 已经存在。时输入
+git remote rm origin
 
 
 
